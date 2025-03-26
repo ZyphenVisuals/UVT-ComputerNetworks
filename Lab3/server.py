@@ -15,6 +15,7 @@ def broadcast(data, conn):
             try:
                 client.send(data.encode())
             except:
+                print("Connection closed.")
                 clients.remove(client)
 
 # Handles receiving data from individual clients

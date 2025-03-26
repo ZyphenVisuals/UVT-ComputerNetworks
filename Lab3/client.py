@@ -15,6 +15,8 @@ def receive_messages(client):
     while True:
         try:
             message = client.recv(1024).decode()
+            if not message:
+                break
             print(message)
         except:
             print("Connection closed.")
